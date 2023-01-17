@@ -1,44 +1,39 @@
-# Docker Getting Started Tutorial
+# Prérequis :
+-Abonnenement Azure
+-Visual Studio Code
+-Git
+-Docker Destop 
+-Extension Docker pour Visual Studio Code
 
-This tutorial was written with the intent of helping folks get up and running
-with containers and is designed to work with Docker Desktop. While not going too much 
-into depth, it covers the following topics:
+#Initialiser le projet
+Cloner le dépôt suivant avec Visual Studio Code : https://github.com/hinault/azure-container
 
-- Running your first container
-- Building containers
-- Learning what containers are
-- Running and removing containers
-- Using volumes to persist data
-- Using bind mounts to support development
-- Using container networking to support multi-container applications
-- Using Docker Compose to simplify the definition and sharing of applications
-- Using image layer caching to speed up builds and reduce push/pull size
-- Using multi-stage builds to separate build-time and runtime dependencies
+Ouvrir le projet dans Visual Studio Code.
 
-## Getting Started
+Ajouter un nouveau fichier Dockerfile dans le répertoire app avec le contenu suivant :
 
-If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
-
-```bash
-docker run -d -p 80:80 docker/getting-started
+```
+# syntax=docker/dockerfile:1
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
 ```
 
-Once it has started, you can open your browser to [http://localhost](http://localhost).
 
-## Development
+# Générer l’image 
 
-This project has a `docker-compose.yml` file, which will start the mkdocs application on your
-local machine and help you see changes instantly.
+Faire un clic droit sur le fichier Dockerfile puis cliquer sur Build pour générer l’image de conteneur. 
 
-```bash
-docker compose up
-```
+Utiliser l’extension Docker de VS Code pour exécuter et tester l’image
 
-## Contributing
+#Publier dans Azure Container Registry
 
-If you find typos or other issues with the tutorial, feel free to create a PR and suggest fixes!
+Créer un registre de conteneur à partir du portail Azure.
 
-If you have ideas on how to make the tutorial better or want to suggest adding new content, please open an 
-issue first before working on your idea. While we love input, we want to keep the tutorial scoped to new-comers.
-As such, we may reject ideas for more advanced requests and don't want you to lose any work you might
-have done. So, ask first and we'll gladly hear your thoughts!
+Activer le compte administrateur.
+
+Utiliser l’extension Docker de VS Code pour pousser l’image dans ACR.
+
