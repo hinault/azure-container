@@ -1,9 +1,9 @@
 # Prérequis :
-*Abonnenement Azure
-*Visual Studio Code
-*Git
-*Docker Destop 
-*Extension Docker pour Visual Studio Code
+- Abonnenement Azure
+- Visual Studio Code
+- Git
+- Docker Destop 
+- Extension Docker pour Visual Studio Code
 
 # Initialiser le projet
 
@@ -13,7 +13,7 @@ Ouvrir le projet dans Visual Studio Code.
 
 Ajouter un nouveau fichier Dockerfile dans le répertoire app avec le contenu suivant :
 
-```
+```docker
 # syntax=docker/dockerfile:1
 FROM node:18-alpine
 WORKDIR /app
