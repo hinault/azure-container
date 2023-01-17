@@ -5,7 +5,8 @@
 -Docker Destop 
 -Extension Docker pour Visual Studio Code
 
-#Initialiser le projet
+# Initialiser le projet
+
 Cloner le dépôt suivant avec Visual Studio Code : https://github.com/hinault/azure-container
 
 Ouvrir le projet dans Visual Studio Code.
