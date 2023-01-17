@@ -1,9 +1,9 @@
 # Prérequis :
--Abonnenement Azure
--Visual Studio Code
--Git
--Docker Destop 
--Extension Docker pour Visual Studio Code
+*Abonnenement Azure
+*Visual Studio Code
+*Git
+*Docker Destop 
+*Extension Docker pour Visual Studio Code
 
 # Initialiser le projet
 
